@@ -36,22 +36,30 @@ export default function App() {
   }, [products.length]);
 
   return (
-    <div class='container'>
-      <h2>Products</h2>
-      <div className='row'>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          products.map((product) => (
-            <Product
-              key={product.id}
-              title={product.title}
-              price={product.price}
-              thumbnail={product.thumbnail}
-            />
-          ))
-        )}
+    <>
+      <nav className='navbar navbar-light bg-light mb-4'>
+        <div className='container-fluid'>
+          <h2 className='navbar-brand'>My Shop</h2>
+          <span>🛒 &nbsp; Cart (0)</span>
+        </div>
+      </nav>
+      <div class='container'>
+        <h2>Products</h2>
+        <div className='row'>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            products.map((product) => (
+              <Product
+                key={product.id}
+                title={product.title}
+                price={product.price}
+                thumbnail={product.thumbnail}
+              />
+            ))
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-function Character({ title, thumbnail, price }) {
+export default function Product({ title, thumbnail, price }) {
   return (
     <div className='col-3'>
       <div className='card'>
@@ -12,5 +12,3 @@ function Character({ title, thumbnail, price }) {
     </div>
   );
 }
-
-export default Character;
