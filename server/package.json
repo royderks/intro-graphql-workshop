@@ -1,0 +1,17 @@
+{
+  "name": "demo-graphql-server",
+  "version": "1.0.0",
+  "description": "Demo GraphQL API Server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}
