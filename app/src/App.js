@@ -8,6 +8,9 @@ const GET_PRODUCTS = gql`
       title
       thumbnail
       price
+      category {
+        title
+      }
     }
   }
 `;
@@ -16,22 +19,31 @@ export default function App() {
   const { loading, data } = useQuery(GET_PRODUCTS);
 
   return (
-    <div class='container'>
-      <h2>Products</h2>
-      <div className='row'>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          data.products.map((product) => (
-            <Product
-              key={product.id}
-              title={product.title}
-              price={product.price}
-              thumbnail={product.thumbnail}
-            />
-          ))
-        )}
+    <>
+      <nav className='navbar navbar-light bg-light mb-4'>
+        <div className='container-fluid'>
+          <h2 className='navbar-brand'>My Shop</h2>
+          <span>🛒 &nbsp; Cart (0)</span>
+        </div>
+      </nav>
+      <div className='container'>
+        <h2>Products</h2>
+        <div className='row'>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            data.products.map((product) => (
+              <Product
+                key={product.id}
+                title={product.title}
+                price={product.price}
+                thumbnail={product.thumbnail}
+                category={product.category}
+              />
+            ))
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

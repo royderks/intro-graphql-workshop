@@ -158,3 +158,16 @@ Hint: Make sure you have run both `yarn && yarn start` in the `app` directory wh
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-5](https://github.com/royderks/intro-graphql-workshop/tree/ex-5)
 </p>
 </details>
+
+6. Suppose we also want to display the category of the products, how can we add this to our query?
+
+Hint: You can copy most of the logic to display the price to do this.
+
+
+<details>
+<summary>Show solution</summary>
+<p>
+
+[https://github.com/royderks/intro-graphql-workshop/tree/ex-6](https://github.com/royderks/intro-graphql-workshop/tree/ex-6)
+</p>
+</details>
