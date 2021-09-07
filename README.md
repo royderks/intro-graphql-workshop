@@ -142,3 +142,19 @@ With query variables:
 
 </p>
 </details>
+
+
+### B. "Frontend"
+
+5. Try running the React application, what do you see? Can you add Apollo Client to this application and retrieve the products using an `useQuery` Hook?
+
+Hint: Make sure you have run both `yarn && yarn start` in the `app` directory where the code for the React application code is.
+
+
+<details>
+<summary>Show solution</summary>
+<p>
+
+[https://github.com/royderks/intro-graphql-workshop/tree/ex-5](https://github.com/royderks/intro-graphql-workshop/tree/ex-5)
+</p>
+</details>
