@@ -1,39 +1,19 @@
-import { useEffect, useState } from 'react';
+import { gql, useQuery } from '@apollo/client';
 import Product from './Product';
 
-export default function App() {
-  const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await fetch('http://localhost:4000/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: `
-            query {
-              products {
-                id
-                title
-                thumbnail
-                price
-              }
-            }
-        `,
-        }),
-      });
-
-      const { data } = await result.json();
-
-      setProducts(data.products);
-      setLoading(false);
+const GET_PRODUCTS = gql`
+  query GetProducts {
+    products {
+      id
+      title
+      thumbnail
+      price
     }
+  }
+`;
 
-    fetchData();
-  }, [products.length]);
+export default function App() {
+  const { loading, data } = useQuery(GET_PRODUCTS);
 
   return (
     <div class='container'>
@@ -42,7 +22,7 @@ export default function App() {
         {loading ? (
           <div>Loading...</div>
         ) : (
-          products.map((product) => (
+          data.products.map((product) => (
             <Product
               key={product.id}
               title={product.title}
