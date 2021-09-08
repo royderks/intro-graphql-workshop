@@ -1,9 +1,10 @@
 import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
 import Product from './Product';
 
 const GET_PRODUCTS = gql`
-  query GetProducts {
-    products {
+  query GetProducts($limit: Int) {
+    products(limit: $limit) {
       id
       title
       thumbnail
@@ -16,7 +17,10 @@ const GET_PRODUCTS = gql`
 `;
 
 export default function App() {
-  const { loading, data } = useQuery(GET_PRODUCTS);
+  const [limit, setLimit] = useState(null);
+  const { loading, data } = useQuery(GET_PRODUCTS, {
+    variables: { limit },
+  });
 
   return (
     <>
@@ -28,6 +32,20 @@ export default function App() {
       </nav>
       <div className='container'>
         <h2>Products</h2>
+        <div className='row mb-4'>
+          <label>
+            Limit results:&nbsp;
+            <select
+              name='limit'
+              onChange={(e) => setLimit(parseInt(e.target.value))}
+            >
+              <option>Default</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+            </select>
+          </label>
+        </div>
         <div className='row'>
           {loading ? (
             <div>Loading...</div>
