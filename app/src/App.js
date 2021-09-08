@@ -16,18 +16,27 @@ const GET_PRODUCTS = gql`
   }
 `;
 
+export const GET_CART = gql`
+  query GetCart {
+    cart {
+      count
+    }
+  }
+`;
+
 export default function App() {
   const [limit, setLimit] = useState(null);
   const { loading, data } = useQuery(GET_PRODUCTS, {
     variables: { limit },
   });
+  const { loading: loadingCart, data: cartData } = useQuery(GET_CART);
 
   return (
     <>
       <nav className='navbar navbar-light bg-light mb-4'>
         <div className='container-fluid'>
           <h2 className='navbar-brand'>My Shop</h2>
-          <span>🛒 &nbsp; Cart (0)</span>
+          {!loadingCart && <span>🛒 &nbsp; Cart ({cartData.cart.count})</span>}
         </div>
       </nav>
       <div className='container'>
@@ -53,6 +62,7 @@ export default function App() {
             data.products.map((product) => (
               <Product
                 key={product.id}
+                id={product.id}
                 title={product.title}
                 price={product.price}
                 thumbnail={product.thumbnail}
