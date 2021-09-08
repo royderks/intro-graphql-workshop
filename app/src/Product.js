@@ -1,6 +1,4 @@
 export default function Product({ title, thumbnail, price, category }) {
-  console.log({ category });
-
   return (
     <div className='col-3'>
       <div className='card'>

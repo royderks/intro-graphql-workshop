@@ -91,9 +91,10 @@ OR
 ```graphql
 query GetProducts($limit: Int) {
   products(limit: $limit) {
+    id
     title
     thumbnail
-    id
+    price
     category {
       title
     }
@@ -169,5 +170,17 @@ Hint: You can copy most of the logic to display the price to do this.
 <p>
 
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-6](https://github.com/royderks/intro-graphql-workshop/tree/ex-6)
+</p>
+</details>
+
+7. We already saw that it's possible to limit the amount of products that is returned from the GraphQL server. Add this functionality to the `useQuery` Hook and create a dropdown to change the amount of products that is displayed from the application.
+
+Hint: Don't worry too much about the styling of the dropdown.
+
+<details>
+<summary>Show solution</summary>
+<p>
+
+[https://github.com/royderks/intro-graphql-workshop/tree/ex-7](https://github.com/royderks/intro-graphql-workshop/tree/ex-7)
 </p>
 </details>
