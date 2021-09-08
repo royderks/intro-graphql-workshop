@@ -144,19 +144,18 @@ With query variables:
 </p>
 </details>
 
-
 ### B. "Frontend"
 
 5. Try running the React application, what do you see? Can you add Apollo Client to this application and retrieve the products using an `useQuery` Hook?
 
 Hint: Make sure you have run both `yarn && yarn start` in the `app` directory where the code for the React application code is.
 
-
 <details>
 <summary>Show solution</summary>
 <p>
 
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-5](https://github.com/royderks/intro-graphql-workshop/tree/ex-5)
+
 </p>
 </details>
 
@@ -164,12 +163,12 @@ Hint: Make sure you have run both `yarn && yarn start` in the `app` directory wh
 
 Hint: You can copy most of the logic to display the price to do this.
 
-
 <details>
 <summary>Show solution</summary>
 <p>
 
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-6](https://github.com/royderks/intro-graphql-workshop/tree/ex-6)
+
 </p>
 </details>
 
@@ -182,6 +181,7 @@ Hint: Don't worry too much about the styling of the dropdown.
 <p>
 
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-7](https://github.com/royderks/intro-graphql-workshop/tree/ex-7)
+
 </p>
 </details>
 
@@ -194,6 +194,7 @@ Hint: Have a look at the `refetchQueries` option of the `useMutation` Hook.
 <p>
 
 [https://github.com/royderks/intro-graphql-workshop/tree/ex-8](https://github.com/royderks/intro-graphql-workshop/tree/ex-8)
+
 </p>
 </details>
 
